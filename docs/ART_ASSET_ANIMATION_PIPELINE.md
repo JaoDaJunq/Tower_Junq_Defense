@@ -7,7 +7,7 @@ Este documento define como produzir e integrar a arte do Tower Junq Defense. Ele
 O conceito B foi escolhido pelo usuário em 14/10/2026. Esta aprovação fixa a direção geral do mundo e da arte, não os sprites finais nem todas as decisões de gameplay. Veja [a bíblia visual](art/ART_BIBLE.md).
 
 - Mundo original formado por ilhas e ondas de papel dobrado, com linguagem visual inspirada em origami e referências japonesas.
-- João aparece neste conceito como navegador de papel, com cabelo preto e uma mecha azul, óculos, capa azul/coral e um pincel de caligrafia. Este é um estudo conceitual, não o model sheet final.
+- João agora tem brief de combate definido como defensor/torre: na forma normal, ataca automaticamente com golpes de katana. A proposta visual o mostra como ronin de origami, com cabelo preto e mecha azul, óculos, roupa de papel marfim/azul e acentos coral. A prancha inicial é proposta aguardando aprovação, não model sheet final.
 - Primeiro inimigo conceitual: uma raia de origami feita de tinta preta.
 - Direção de cor inicial: azul-cobalto, papel marfim, coral e tinta preta; os tons exatos podem ser refinados no model sheet.
 - A rota de defesa pode usar dobras do mar e ilhas de papel; plataformas inspiradas em origami ainda precisam de validação de gameplay.
@@ -27,14 +27,14 @@ Antes da arte, registre para cada unidade:
 - Referências aprovadas e traços que não podem mudar.
 - Câmera, escala relativa, paleta e nível de detalhe.
 - Se fica parada ou se move; orientação de idle e direções de ataque.
-- Ataque básico, habilidade, projétil e leitura visual do alcance/impacto.
+- Ataque básico, habilidade, projétil quando existir e leitura visual do alcance/impacto. Para defesas de tower defense, defina como escolhem o alvo, de que ponto atacam e como o golpe aponta para inimigos no caminho.
 - Estados realmente necessários para o gameplay.
 
 Se um dado ainda não existir, faça uma proposta curta e marque como pendente. Não invente que ela já foi aprovada.
 
 ### 1. Bíblia visual e model sheet
 
-Defina o padrão compartilhado do elenco: proporção chibi, tamanho relativo, perspectiva, contorno, paleta, nível de pixel, iluminação, baseline e origem/pivô.
+Defina o padrão compartilhado do elenco: proporção, tamanho relativo, perspectiva, contorno, paleta, nível de detalhe, iluminação, baseline e origem/pivô. Não presuma pixel art nem proporção chibi; escolha a técnica de acordo com a direção visual aprovada.
 
 Apresente primeiro o design parado em vistas úteis para o jogo, com paleta e silhueta legíveis. Mostre separadamente versões alternativas quando houver escolha visual. Aguarde aprovação do modelo do personagem antes de produzir animações em lote.
 
@@ -45,8 +45,8 @@ Complete um personagem do início ao fim antes de expandir para o elenco:
 1. Sprite base aprovado.
 2. Idle curto.
 3. Ataque básico com antecipação, ação e recuperação suficientes para o golpe ser legível.
-4. Projétil/arma, telegráfico, impacto e VFX necessários, em artes separadas.
-5. Habilidade especial.
+4. Arma, telegráfico, impacto, projétil quando existir e VFX necessários, em artes separadas.
+5. Habilidade especial, se prevista no kit do personagem.
 6. Estados adicionais apenas se o jogo exigir, como dano ou derrota.
 
 Uma unidade fixa não precisa de caminhada. Um inimigo que percorre caminhos precisa de orientação compatível com o movimento. Não espelhe automaticamente sprites assimétricos sem conferir arma, cabelo, roupa, marca e mão dominante.
