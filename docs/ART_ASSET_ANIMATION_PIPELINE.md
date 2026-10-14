@@ -2,16 +2,18 @@
 
 Este documento define como produzir e integrar a arte do Tower Junq Defense. Ele existe para proteger os designs aprovados e evitar os problemas que já apareceram em outros jogos: spritesheet recortada errado, transparência falsa, variação de tamanho entre personagens, direção incoerente, membro que some entre frames e ataques sem arte própria.
 
-## Direção visual de trabalho
+## Direção visual aprovada: Mar de Origami
 
-Proposta inicial, sujeita à aprovação do usuário antes de virar padrão definitivo:
+O conceito B foi escolhido pelo usuário em 14/10/2026. Esta aprovação fixa a direção geral do mundo e da arte, não os sprites finais nem todas as decisões de gameplay. Veja [a bíblia visual](art/ART_BIBLE.md).
 
-- Tower defense 2D em pixel art chibi, visão top-down 3/4 e tela planejada primeiro para celular em paisagem.
-- Personagens do grupo Junq são defensores reconhecíveis por silhueta, paleta, roupa, equipamento e ataque próprio.
-- Mapas e inimigos têm identidade própria por área.
-- Evoluções redesenham a forma/sprite do personagem; não dependem de recolor ou aura genérica.
-- Personagem, arma, projétil, telegráfico, impacto e VFX são assets independentes quando tiverem funções visuais distintas.
-- Se o personagem for uma defesa fixa, não produza caminhada sem necessidade de gameplay. Se houver movimento, defina antes quais direções e quais movimentos precisam de frames.
+- Mundo original formado por ilhas e ondas de papel dobrado, com linguagem visual inspirada em origami e referências japonesas.
+- João aparece neste conceito como navegador de papel, com cabelo preto e uma mecha azul, óculos, capa azul/coral e um pincel de caligrafia. Este é um estudo conceitual, não o model sheet final.
+- Primeiro inimigo conceitual: uma raia de origami feita de tinta preta.
+- Direção de cor inicial: azul-cobalto, papel marfim, coral e tinta preta; os tons exatos podem ser refinados no model sheet.
+- A rota de defesa pode usar dobras do mar e ilhas de papel; plataformas inspiradas em origami ainda precisam de validação de gameplay.
+- A câmera, a proporção final da tela, os papéis dos personagens, a história e as animações ainda não foram aprovados.
+
+A identidade não deve retornar automaticamente ao pixel art chibi, cenário urbano ou equipamento de outros jogos. Use o concept aprovado como ponto de partida e crie os personagens e mapas deste projeto para esta proposta.
 
 Não copie personagens, sprites, UI, nomes, efeitos ou identidade de jogos comerciais usados como referência. Referências públicas servem para aprender estrutura e legibilidade. Registre origem, autor e licença de todo asset externo; “público” e “gratuito” não significam automaticamente reutilizável.
 
