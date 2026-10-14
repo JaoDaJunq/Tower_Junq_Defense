@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111a38">
+  <title>Tower Junq Defense — Jardim da Lua</title>
+  <style>
+    :root{color-scheme:dark;--ink:#111a38;--ink-2:#1c2c56;--paper:#f4ead3;--coral:#fb897e;--blue:#4775d2;--gold:#f5d992;--muted:#b5c2df}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0,#273c70,#10172f 65%);color:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;align-items:center;justify-content:center;padding:18px}
+    .app{width:min(1280px,100%);background:rgba(13,20,43,.88);border:1px solid #52699a;border-radius:20px;overflow:hidden;box-shadow:0 28px 90px #060a18aa}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 20px;background:linear-gradient(110deg,#17264d,#101a37);border-bottom:1px solid #425985}
+    .brand{display:flex;align-items:center;gap:12px}.crest{width:42px;height:42px;border:1px solid #8ba7df;border-radius:14px;display:grid;place-items:center;color:var(--gold);font-size:21px;background:#263c70}.brand h1{font-size:15px;line-height:1.1;margin:0;letter-spacing:.12em}.brand small{display:block;color:#aebce0;font-size:10px;letter-spacing:.22em;margin-top:5px}
+    .hud{display:flex;align-items:center;gap:9px}.stat{min-width:82px;padding:7px 11px;border-radius:12px;background:#22345f;border:1px solid #465f92;text-align:center}.stat small{display:block;font-size:9px;letter-spacing:.16em;color:#bdc9e3}.stat strong{font-size:17px}.stat.life strong{color:#ffaaa0}.stat.cash strong{color:var(--gold)}
+    button{font:inherit;color:inherit;border:1px solid #7089b6;background:#263b6c;border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:750;transition:.15s transform,.15s background,.15s opacity}button:hover:not(:disabled){transform:translateY(-1px);background:#34528e}button:active:not(:disabled){transform:translateY(1px)}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:linear-gradient(135deg,#e9907f,#c7656c);border-color:#ffb2a0;color:#1b1a31}.primary:hover:not(:disabled){background:linear-gradient(135deg,#ffad98,#df7880)}
+    .scene-wrap{position:relative;background:#121e42}.scene{width:100%;aspect-ratio:16/9;display:block;touch-action:manipulation}.scene-hint{position:absolute;left:14px;top:14px;padding:7px 11px;border-radius:999px;background:#111a38c9;border:1px solid #788ab4;color:#f5ecd8;font-size:11px;backdrop-filter:blur(5px);pointer-events:none}.toast{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:12px 18px;background:#111a38e8;border:1px solid #90a7d4;border-radius:14px;box-shadow:0 12px 35px #070c20aa;font-weight:800;pointer-events:none;opacity:0;transition:opacity .18s}.toast.show{opacity:1}
+    .controls{display:grid;grid-template-columns:minmax(250px,1fr) auto auto;gap:12px;align-items:center;padding:14px 18px;background:#121b38;border-top:1px solid #425985}.instructions{color:#c4cee3;font-size:12px;line-height:1.45}.instructions strong{display:block;color:#fff2d9;font-size:13px;margin-bottom:2px}.actions{display:flex;gap:8px;align-items:center}.build-card{display:flex;align-items:center;gap:10px;text-align:left;min-width:190px;background:#1e2e59}.build-card.selected{outline:2px solid var(--gold);background:#2b4174}.portrait{width:36px;height:40px;object-fit:contain;background:#f2e6ce;border-radius:7px}.build-card span{font-size:12px}.build-card small{display:block;color:#d0d8e9;font-size:10px;margin-top:2px}.message{min-height:17px;color:#eccf90;font-size:11px;text-align:right;padding:0 18px 8px;background:#121b38}
+    .modal{position:fixed;inset:0;display:none;place-items:center;padding:18px;background:#080d1dcc;z-index:5}.modal.show{display:grid}.modal-card{width:min(480px,100%);padding:25px;text-align:center;border-radius:20px;background:#17264d;border:1px solid #7b8fb9;box-shadow:0 20px 80px #0009}.modal-card h2{margin:0 0 9px}.modal-card p{color:#ccd5e9;line-height:1.5}.modal-card button{margin-top:8px}
+    @media(max-width:760px){body{padding:0;align-items:flex-start}.app{border-radius:0;min-height:100vh;border-left:0;border-right:0}header{padding:10px 12px;gap:8px}.brand{gap:8px}.crest{width:34px;height:34px;border-radius:11px}.brand h1{font-size:12px}.brand small{font-size:8px}.hud{gap:5px}.stat{min-width:56px;padding:6px}.stat small{font-size:8px}.stat strong{font-size:14px}header .primary{padding:8px 10px;font-size:11px}.controls{grid-template-columns:1fr auto;padding:10px;gap:7px}.instructions{font-size:10px}.instructions strong{font-size:11px}.actions{grid-column:1/-1;justify-content:center}.build-card{min-width:150px;padding:7px 9px}.message{text-align:center}.scene-hint{font-size:9px;padding:5px 8px;top:7px;left:7px}}
+    @media(max-width:420px){.brand small{display:none}.stat.wave{display:none}.controls{grid-template-columns:1fr}.actions{grid-column:auto}.build-card{min-width:130px}.scene{min-height:210px}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand"><div class="crest">月</div><div><h1>TOWER JUNQ DEFENSE</h1><small>JARDIM DA LUA</small></div></div>
+      <div class="hud">
+        <div class="stat wave"><small>ONDA</small><strong id="wave">1</strong></div>
+        <div class="stat cash"><small>SELOS</small><strong id="cash">300</strong></div>
+        <div class="stat life"><small>VIDAS</small><strong id="lives">12</strong></div>
+        <button class="primary" id="startWave">Iniciar onda</button>
+      </div>
+    </header>
+    <section class="scene-wrap" aria-label="Mapa Jardim da Lua">
+      <canvas class="scene" id="game" width="1280" height="720" aria-label="Campo de batalha. Clique em uma plataforma para colocar o João."></canvas>
+      <div class="scene-hint" id="hint">Escolha João e toque numa plataforma ✦</div>
+      <div class="toast" id="toast"></div>
+    </section>
+    <section class="controls">
+      <div class="instructions"><strong>Defenda o Jardim da Lua</strong>Coloque o João nas ilhas marcadas. Ele ataca as raposas automaticamente quando entram no alcance.</div>
+      <div class="actions">
+        <button class="build-card selected" id="selectJao" aria-pressed="true"><img class="portrait" src="assets/jao.webp" alt=""><span>Ronin João<small>Defensor · 100 selos</small></span></button>
+        <button id="pause">Pausar</button>
+        <button id="speed">1×</button>
+      </div>
+      <div></div>
+    </section>
+    <div class="message" id="message">Toque em uma plataforma vazia para posicionar uma torre.</div>
+  </main>
+  <div class="modal" id="result"><div class="modal-card"><h2 id="resultTitle">Jardim protegido</h2><p id="resultText"></p><button class="primary" id="restart">Jogar novamente</button></div></div>
+  <script>
+  (()=>{
+    const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+    const $=id=>document.getElementById(id);
+    const img={};
+    for(const name of ['map','jao','fox','slash']){img[name]=new Image();img[name].src=`assets/${name}.webp`;}
+    const W=1280,H=720, towerCost=100, towerRange=205, towerRate=1.05;
+    const path=[{x:-30,y:490},{x:145,y:490},{x:145,y:270},{x:365,y:270},{x:365,y:530},{x:660,y:530},{x:660,y:205},{x:955,y:205},{x:955,y:415},{x:1310,y:415}];
+    const pads=[{x:90,y:315},{x:260,y:595},{x:485,y:355},{x:555,y:125},{x:830,y:570},{x:1090,y:300}];
+    let cash=300,lives=12,wave=1,spawning=false,paused=false,speed=1,spawnLeft=0,spawnTimer=0,last=performance.now(),toastTimer=0;
+    let towers=[],enemies=[],slashes=[],effects=[],selectedTower=null,placing=true,gameOver=false;
+    const pathLengths=[];let totalPath=0;
+    for(let i=1;i<path.length;i++){const d=Math.hypot(path[i].x-path[i-1].x,path[i].y-path[i-1].y);pathLengths.push(d);totalPath+=d;}
+    function pointAt(distance){let d=distance;for(let i=0;i<pathLengths.length;i++){const len=pathLengths[i];if(d<=len){const a=path[i],b=path[i+1],t=len?d/len:0;return{x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,angle:Math.atan2(b.y-a.y,b.x-a.x)};}d-=len;}return {...path.at(-1),angle:0};}
+    function fmt(){ $('cash').textContent=cash;$('lives').textContent=lives;$('wave').textContent=wave; }
+    function say(text){$('message').textContent=text;}
+    function toast(text){const t=$('toast');t.textContent=text;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),1250);}
+    function pathStroke(width,color){ctx.beginPath();path.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=width;ctx.strokeStyle=color;ctx.stroke();}
+    function drawPath(){pathStroke(100,'rgba(15,23,50,.68)');pathStroke(90,'rgba(240,228,198,.97)');pathStroke(76,'rgba(248,239,218,.94)');ctx.save();ctx.setLineDash([3,21]);pathStroke(2,'rgba(179,153,117,.48)');ctx.restore();
+      const start=path[0],end=path.at(-1);ctx.fillStyle='#f3d891';ctx.strokeStyle='#25396b';ctx.lineWidth=5;ctx.beginPath();ctx.arc(40,start.y,18,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.fillStyle='#203058';ctx.font='bold 16px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('➜',40,start.y);
+      ctx.fillStyle='#fb897e';ctx.strokeStyle='#25396b';ctx.beginPath();ctx.arc(1235,end.y,20,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.fillStyle='#fff2d9';ctx.font='bold 15px system-ui';ctx.fillText('月',1235,end.y);
+    }
+    function drawPads(){pads.forEach((p,i)=>{const occupied=towers.some(t=>t.pad===i);ctx.save();ctx.translate(p.x,p.y);ctx.beginPath();for(let k=0;k<6;k++){const a=Math.PI/3*k-Math.PI/6;const x=Math.cos(a)*48,y=Math.sin(a)*42;k?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.closePath();ctx.fillStyle=occupied?'rgba(22,33,66,.72)':'rgba(245,234,210,.88)';ctx.strokeStyle=occupied?'#8197c4':'#f7b09e';ctx.lineWidth=4;ctx.fill();ctx.stroke();if(!occupied){ctx.strokeStyle='#314977';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(-10,0);ctx.lineTo(10,0);ctx.moveTo(0,-10);ctx.lineTo(0,10);ctx.stroke();}ctx.restore();});}
+    function drawTower(t){const p=pads[t.pad];if(selectedTower===t){ctx.beginPath();ctx.arc(p.x,p.y,towerRange,0,Math.PI*2);ctx.fillStyle='rgba(104,151,235,.09)';ctx.fill();ctx.setLineDash([9,9]);ctx.strokeStyle='rgba(181,207,255,.45)';ctx.lineWidth=2;ctx.stroke();ctx.setLineDash([]);}ctx.beginPath();ctx.ellipse(p.x,p.y+28,32,12,0,0,Math.PI*2);ctx.fillStyle='#111b38aa';ctx.fill();if(img.jao.complete)ctx.drawImage(img.jao,p.x-40,p.y-91,80,120);if(t.flash>0){ctx.globalAlpha=Math.min(1,t.flash*3);ctx.fillStyle='#ffe3a0';ctx.beginPath();ctx.arc(p.x,p.y-32,16,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}}
+    function drawEnemy(e){const pt=pointAt(e.distance);const bob=Math.sin(performance.now()/130+e.id)*3;ctx.save();ctx.translate(pt.x,pt.y+bob);ctx.rotate(pt.angle-.65);if(img.fox.complete)ctx.drawImage(img.fox,-31,-27,62,54);ctx.restore();const hp=Math.max(0,e.hp/e.maxHp);ctx.fillStyle='#141b34';ctx.fillRect(pt.x-21,pt.y-40,42,6);ctx.fillStyle=hp>.45?'#8bd7b0':'#ff897f';ctx.fillRect(pt.x-20,pt.y-39,40*hp,4);}
+    function draw(){ctx.clearRect(0,0,W,H);if(img.map.complete)ctx.drawImage(img.map,0,0,W,H);else{ctx.fillStyle='#172957';ctx.fillRect(0,0,W,H);}drawPath();drawPads();enemies.forEach(drawEnemy);towers.forEach(drawTower);slashes.forEach(s=>{if(!img.slash.complete)return;const alpha=Math.max(0,s.life/.22);ctx.save();ctx.globalAlpha=alpha;ctx.translate(s.x,s.y);ctx.rotate(s.angle);ctx.drawImage(img.slash,-64,-42,128,84);ctx.restore();});effects.forEach(e=>{ctx.globalAlpha=Math.max(0,e.life/.55);ctx.fillStyle='#fff1ca';ctx.beginPath();ctx.arc(e.x,e.y,11*(1-e.life/.55),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;});}
+    function spawn(){const hp=52+wave*9;enemies.push({id:Math.random()*99999,distance:0,hp,maxHp:hp,speed:72+Math.min(wave*2,24),reward:14+Math.floor(wave/3)});}
+    function startWave(){if(gameOver||spawning)return;spawning=true;spawnLeft=7+Math.min(wave,6);spawnTimer=0;say(`Onda ${wave}: as raposas estão chegando!`);$('startWave').disabled=true;}
+    function attack(t,e){const p=pads[t.pad],q=pointAt(e.distance);const angle=Math.atan2(q.y-(p.y-32),q.x-p.x);slashes.push({x:p.x+Math.cos(angle)*44,y:p.y-32+Math.sin(angle)*44,angle,life:.22});t.cool=towerRate;t.flash=.18;e.hp-=34;effects.push({x:q.x,y:q.y,life:.55});if(e.hp<=0){cash+=e.reward;e.dead=true;fmt();}}
+    function update(dt){if(paused||gameOver)return;dt*=speed;slashes.forEach(s=>s.life-=dt);slashes=slashes.filter(s=>s.life>0);effects.forEach(e=>e.life-=dt);effects=effects.filter(e=>e.life>0);towers.forEach(t=>{t.cool=Math.max(0,t.cool-dt);t.flash=Math.max(0,t.flash-dt);if(t.cool<=0){const target=enemies.filter(e=>!e.dead&&Math.hypot(pointAt(e.distance).x-pads[t.pad].x,pointAt(e.distance).y-pads[t.pad].y)<towerRange).sort((a,b)=>b.distance-a.distance)[0];if(target)attack(t,target);}});
+      if(spawning){spawnTimer-=dt;if(spawnLeft>0&&spawnTimer<=0){spawn();spawnLeft--;spawnTimer=.82;}if(spawnLeft===0&&enemies.length===0){spawning=false;wave++;cash+=65;fmt();say(`Onda concluída! +65 selos. Prepare a próxima.`);$('startWave').disabled=false;}}
+      enemies.forEach(e=>{if(!e.dead)e.distance+=e.speed*dt;if(e.distance>=totalPath){e.dead=true;lives--;fmt();if(lives<=0){gameOver=true;showResult(false);}}});enemies=enemies.filter(e=>!e.dead);if(spawning&&spawnLeft===0&&enemies.length===0&&!gameOver){/* resolved by next frame */}
+    }
+    function showResult(win){$('resultTitle').textContent=win?'Jardim protegido!':'O jardim foi invadido';$('resultText').textContent=win?`Você segurou ${wave} ondas de raposas.`:'As raposas chegaram ao coração do jardim. Reposicione as torres e tente outra vez.';$('result').classList.add('show');}
+    function position(evt){const r=canvas.getBoundingClientRect();return{x:(evt.clientX-r.left)*W/r.width,y:(evt.clientY-r.top)*H/r.height};}
+    canvas.addEventListener('pointerdown',evt=>{const p=position(evt);let nearest=-1,best=Infinity;pads.forEach((q,i)=>{const d=Math.hypot(q.x-p.x,q.y-p.y);if(d<best){best=d;nearest=i;}});if(best>62)return;const occupied=towers.find(t=>t.pad===nearest);if(occupied){selectedTower=occupied;placing=false;say('João selecionado. O círculo mostra o alcance da katana.');$('selectJao').classList.remove('selected');draw();return;}if(!placing){placing=true;selectedTower=null;}
+      if(cash<towerCost){toast('Faltam selos!');say('Derrote raposas para ganhar selos.');return;}cash-=towerCost;towers.push({pad:nearest,cool:.25,flash:0});selectedTower=towers.at(-1);fmt();say('João posicionado! Ele ataca automaticamente as raposas no alcance.');toast('Torre posicionada');draw();});
+    $('selectJao').addEventListener('click',()=>{placing=true;selectedTower=null;$('selectJao').classList.add('selected');say('Toque em uma plataforma vazia para colocar o João.');draw();});
+    $('startWave').addEventListener('click',startWave);$('pause').addEventListener('click',()=>{paused=!paused;$('pause').textContent=paused?'Continuar':'Pausar';say(paused?'Jogo pausado.':'A defesa continua.');});$('speed').addEventListener('click',()=>{speed=speed===1?1.5:speed===1.5?2:1;$('speed').textContent=`${speed}×`;});
+    $('restart').addEventListener('click',()=>{cash=300;lives=12;wave=1;spawning=false;paused=false;speed=1;spawnLeft=0;towers=[];enemies=[];slashes=[];effects=[];selectedTower=null;placing=true;gameOver=false;$('pause').textContent='Pausar';$('speed').textContent='1×';$('startWave').disabled=false;$('result').classList.remove('show');$('selectJao').classList.add('selected');fmt();say('Toque em uma plataforma vazia para posicionar uma torre.');});
+    function loop(now){const dt=Math.min(.05,(now-last)/1000);last=now;update(dt);draw();requestAnimationFrame(loop);}fmt();requestAnimationFrame(loop);
+  })();
+  </script>
+</body>
+</html>
