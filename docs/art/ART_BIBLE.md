@@ -1,7 +1,7 @@
 # Bíblia visual: Mar de Origami
 
 **Status:** direção visual conceitual aprovada pelo usuário em 14/10/2026.  
-**Escopo da aprovação:** conceito geral de arte e mundo. Os sprites finais, a câmera de gameplay, as regras completas e as animações ainda não foram aprovados.
+**Escopo da aprovação:** conceito geral do mundo e linguagem de arte. A função básica de combate do João e o uso de katana foram definidos; o desenho visual abaixo continua como proposta conceitual aguardando aprovação. Sprites finais, câmera de gameplay, regras completas e animações ainda não foram aprovados.
 
 ## Ideia central
 
@@ -9,16 +9,27 @@ O jogo se passa num arquipélago oceânico construído em papel. Ilhas, ondas, p
 
 O primeiro conceito aprovado é o **Mar de Origami**: uma rota de defesa atravessa ilhas de papel e ondas dobradas. As dobras podem orientar a leitura do caminho, e pequenas plataformas de papel podem marcar locais estratégicos.
 
-## João: conceito do personagem
+## João: ronin de origami
 
-João foi imaginado como um navegador de papel:
+### Brief de combate definido
 
-- Rosto jovem, óculos, cabelo preto com uma mecha azul discreta para manter reconhecimento.
-- Capa ou manto de papel azul-cobalto com detalhes coral.
-- Pincel de caligrafia usado como instrumento de navegação ou comando.
-- Silhueta leve e dobrada, como uma peça de papel articulada.
+- **Papel:** defensor/torre do jogador num tower defense inspirado em Bloons TD.
+- **Ação básica:** ataca automaticamente os inimigos que entram no alcance com golpes de katana.
+- **Forma normal:** apenas espadadas. Não usar magia, projéteis ou uma segunda arma nesta versão base.
+- **Movimento:** a proposta visual o mostra defendendo a partir de um ponto; posicionamento, alcance, prioridade de alvo e melhorias ainda dependem das regras de gameplay.
+- **Leitura do ataque:** antecipação curta, corte claramente orientado ao alvo e recuperação breve. O rastro deve reforçar a direção da lâmina sem esconder o personagem ou o inimigo.
 
-Isso ainda é um conceito, não um design final. Roupa, proporção, arma/ferramenta, pose, escala e função de combate serão definidos no model sheet. Não reutilizar automaticamente a roupa, arma ou sprite de outro jogo.
+### Proposta visual aguardando aprovação
+
+João é um jovem ronin construído em papel dobrado, mantendo os traços que permitem reconhecê-lo:
+
+- Cabelo preto com uma mecha azul-cobalto e óculos.
+- Roupa de ronin em camadas de papel marfim e azul-cobalto, com poucos acentos coral.
+- Katana como único equipamento de combate visível.
+- Vincos, bordas dobradas e tecido de papel estilizado, com silhueta clara em tamanho pequeno.
+- Expressão focada e postura firme, legível como defensor mesmo sem movimento pelo mapa.
+
+A primeira prancha visual deste conceito é uma exploração, não um design aprovado nem um asset jogável. Roupa, proporções, detalhes da katana e pose final ainda podem mudar. Não reutilizar automaticamente a roupa, arma ou sprite de outro jogo.
 
 ## Primeiro inimigo conceitual
 
@@ -45,18 +56,18 @@ Ainda não estão fechados:
 
 - Câmera e projeção exatas do gameplay.
 - Orientação e proporção final da tela.
-- Se João e os demais personagens ficam fixos como torres ou se podem se mover.
-- Funções de combate, ataques, upgrades e evolução visual.
-- Design final de João, Alice, Gui, Caetano e dos demais.
+- Regras de posicionamento, alcance e seleção de alvo das defesas.
+- Habilidades, upgrades e evolução visual do João.
+- Design final do João e dos demais personagens, incluindo Alice, Gui e Caetano.
 - Nomes, lore, mapa completo, inimigos adicionais e chefes.
 - Técnica final de produção e dimensões dos sprites.
 
 ## Próximo fluxo de arte
 
-1. Escrever o brief do João e definir a função dele no combate.
-2. Criar opções de model sheet coerentes com este conceito.
-3. Aprovar um modelo estático antes das animações.
-4. Fazer João como personagem piloto: idle, ataque básico e os assets separados do ataque.
+1. Confirmar o brief de gameplay e a proposta estática do João.
+2. Refinar o model sheet com vistas úteis e escala de leitura em jogo.
+3. Aprovar o modelo estático antes de fechar animações.
+4. Fazer o piloto do João: idle curto, golpe básico de katana e o efeito de corte separado se necessário.
 5. Testar escala, leitura, recorte e transparência dentro do jogo.
 6. Só então produzir o restante do elenco e do primeiro mapa.
 
