@@ -31,14 +31,16 @@ João é um jovem ronin construído em papel dobrado, mantendo os traços que pe
 
 A primeira prancha visual deste conceito é uma exploração, não um design aprovado nem um asset jogável. Roupa, proporções, detalhes da katana e pose final ainda podem mudar. Não reutilizar automaticamente a roupa, arma ou sprite de outro jogo.
 
-## Primeiro inimigo conceitual
+## Mapas e inimigos conceituais
 
-Uma raia de origami feita de tinta preta:
+Quatro pares foram aprovados como opções do universo visual. **Jardim da Lua + Raposa de Caudas Dobráveis** são a primeira versão jogável. As outras três combinações ficam guardadas para futuras fases:
 
-- Forma ampla e simples para continuar legível em tamanho pequeno.
-- Corpo montado em dobras angulares, com bordas de papel.
-- Tinta escura como contraste; pequenos detalhes coral podem indicar energia ou perigo.
-- Comportamento, nome, animação e relação com as ondas ainda estão em aberto.
+- **Atol das Dobras + Raia de Tinta:** recifes de papel e maré azul.
+- **Bosque de Bambu de Papel + Besouro de Carapaça:** rota sinuosa entre bambus dobrados.
+- **Porto dos Torii + Lampião Errante:** docas e canais sob lanternas de papel.
+- **Jardim da Lua + Raposa de Caudas Dobráveis:** lótus de papel e canais azul-lavanda; selecionado para o primeiro protótipo.
+
+A raposa é uma criatura ágil de papel dobrado, com focinho triangular e caudas em camadas. Nome, comportamento e animação final ainda podem mudar. Os outros inimigos também permanecem como concepts, sem regras de combate aprovadas.
 
 ## Linguagem visual
 
